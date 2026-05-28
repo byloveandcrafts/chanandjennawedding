@@ -2937,49 +2937,31 @@
        GUESTBOOK
     ================================================================ */
     /* ================================================================
-       GUESTBOOK — synced via Anthropic Storage API
+       GUESTBOOK — backed by Google Sheets via Apps Script
+       ➜ Replace APPS_SCRIPT_URL below with your deployed Web App URL
     ================================================================ */
-    const STORAGE_KEY = 'christian-jenna-guestbook-v2';
+    const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzYYB2m6IP_An_kTilrtTIXwuatyMArNnXhA6A2kH8rNokbyadpe0-awwUBgkVOHuU/exec';
 
     function escHtml(t) {
       return t.replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#39;');
     }
 
-    async function fetchMessages() {
+    async function getMessages() {
       try {
-        const res = await fetch('https://api.anthropic.com/v1/messages', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            model: 'claude-sonnet-4-20250514',
-            max_tokens: 1000,
-            system: `You are a guestbook data manager. The key is "${STORAGE_KEY}". When asked to GET, return ONLY the raw JSON array stored (or [] if empty). When asked to SET with new data, acknowledge with "SAVED".`,
-            messages: [{ role: 'user', content: `GET the guestbook messages for key ${STORAGE_KEY}` }]
-          })
-        });
+        const res = await fetch(`${APPS_SCRIPT_URL}?action=get`, { method: 'GET' });
         const data = await res.json();
-        const text = (data.content?.[0]?.text || '[]').trim();
-        try { return JSON.parse(text); } catch { return []; }
+        return Array.isArray(data) ? data : [];
       } catch { return []; }
     }
 
-    // Use window.storage (artifact persistent storage) for cross-device sync
-    async function getMessages() {
-      try {
-        const result = await window.storage.get(STORAGE_KEY, true); // shared=true for all devices
-        return result ? JSON.parse(result.value) : [];
-      } catch {
-        // Fallback to localStorage if storage API unavailable
-        try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || []; } catch { return []; }
-      }
-    }
-
-    async function saveMessages(msgs) {
-      try {
-        await window.storage.set(STORAGE_KEY, JSON.stringify(msgs), true); // shared=true
-      } catch {
-        try { localStorage.setItem(STORAGE_KEY, JSON.stringify(msgs)); } catch {}
-      }
+    async function postMessage(name, message) {
+      const res = await fetch(APPS_SCRIPT_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'text/plain' }, // avoid CORS preflight
+        body: JSON.stringify({ action: 'post', name, message })
+      });
+      const data = await res.json();
+      if (!data.success) throw new Error(data.error || 'Failed to post');
     }
 
     async function renderMessages() {
@@ -3003,9 +2985,7 @@
       submitBtn.disabled = true;
       statusEl.textContent = 'Posting…';
       try {
-        const msgs = await getMessages();
-        msgs.push({ name, message, createdAt: new Date().toISOString() });
-        await saveMessages(msgs);
+        await postMessage(name, message);
         e.target.reset();
         statusEl.textContent = '✦ Message posted';
         await renderMessages();
