@@ -2037,9 +2037,7 @@
       <video id="mainVideo" controls playsinline preload="metadata" style="display:block;width:100%;aspect-ratio:16/9;background:#000;">
         <source src="prenup.mp4" type="video/mp4">
         <source src="video.webm" type="video/webm">
-        <p style="color:rgba(255,255,255,.5);padding:20px;font-family:'Cormorant Garamond',serif;font-style:italic;">
-          Place <strong>video.mp4</strong> in the same folder as this HTML file to display your save-the-date video here.
-        </p>
+       
       </video>
     </div>
     <p style="font-family:'Cinzel',serif;font-size:9px;letter-spacing:2px;color:rgba(255,255,255,.2);margin-top:16px;">Place video.mp4 in the same folder as this file</p>
@@ -2611,9 +2609,7 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
         Share Your Photos
       </a>
-      <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;color:var(--ink3);margin-top:14px;">
-        Update the link above with your actual shared album URL
-      </p>
+      
     </div>
   </section>
 
@@ -2841,10 +2837,10 @@
     const bgMusic = new Audio();
     let playing = false, currentTrack = 0;
     const tracks = [
-      { src: 'https://github.com/user-attachments/files/28343774/WALKING.AWAY.mp3', link: 'https://www.youtube.com/watch?v=SampleLink1' },
+      { src: 'https://github.com/user-attachments/files/28343774/WALKING.AWAY.mp3', title: 'Walking Away', artist: 'Justin Bieber', link: 'https://www.youtube.com/watch?v=SampleLink1' },
       { src: 'https://github.com/user-attachments/files/28343846/Your.Universe.Acoustic.mp3', title: 'Your Universe', artist: 'Rico Blanco', link: 'https://www.youtube.com/watch?v=SampleLink2' },
-      { src: 'https://github.com/user-attachments/files/28330465/Rico.Blanco.-.Balisong.Transformed.2016.mp3', title: 'All of Me', artist: 'John Legend', link: 'https://www.youtube.com/watch?v=450p7goxZqg' },
-      { src: 'https://github.com/user-attachments/files/28343919/LANY.-.XXL.Official.Lyric.Video.mp3', title: "Can't Help Falling in Love", artist: 'Elvis Presley', link: 'https://www.youtube.com/watch?v=vGJTaP6anOU' }
+      { src: 'https://github.com/user-attachments/files/28330465/Rico.Blanco.-.Balisong.Transformed.2016.mp3', title: 'Balisong', artist: 'Rico Blanco', link: 'https://www.youtube.com/watch?v=450p7goxZqg' },
+      { src: 'https://github.com/user-attachments/files/28343919/LANY.-.XXL.Official.Lyric.Video.mp3', title: "XXL", artist: 'Lany', link: 'https://www.youtube.com/watch?v=vGJTaP6anOU' }
     ];
     function loadTrack(i) {
       currentTrack = i;
