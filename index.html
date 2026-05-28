@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Christian &amp; Jenna | Wedding by the Shore</title>
+  <title>Christian &amp; Jenna | You're Invited to Celebrate with Us!</title>
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cormorant:ital,wght@0,300;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Cinzel:wght@400;500;600&family=Tenor+Sans&family=Great+Vibes&family=Pinyon+Script&display=swap"
     rel="stylesheet">
@@ -38,47 +38,9 @@
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    body { font-family: 'EB Garamond', serif; background: var(--foam); color: var(--ink); overflow-x: hidden; cursor: none; }
+    body { font-family: 'EB Garamond', serif; background: var(--foam); color: var(--ink); overflow-x: hidden; }
 
-    /* ================================================================
-       CUSTOM CURSOR — Enhanced with magnetic pull
-    ================================================================ */
-    #cursor {
-      position: fixed; width: 22px; height: 22px;
-      border: 1.5px solid var(--gold); border-radius: 50%;
-      pointer-events: none; z-index: 99999;
-      transform: translate(-50%, -50%);
-      transition: width .3s ease, height .3s ease, border-color .3s ease, background .3s ease;
-      mix-blend-mode: screen;
-    }
-    #cursor.hover {
-      width: 44px; height: 44px;
-      border-color: var(--gold-light);
-      background: rgba(200, 164, 74, 0.08);
-    }
-    #cursor-dot {
-      position: fixed; width: 5px; height: 5px;
-      background: var(--gold); border-radius: 50%;
-      pointer-events: none; z-index: 99999;
-      transform: translate(-50%, -50%);
-      transition: transform .1s ease;
-    }
 
-    /* ================================================================
-       SPARKLE TRAIL
-    ================================================================ */
-    .cursor-sparkle {
-      position: fixed;
-      pointer-events: none;
-      z-index: 99998;
-      border-radius: 50%;
-      transform: translate(-50%, -50%) scale(1);
-      animation: sparkleOut .7s ease forwards;
-    }
-    @keyframes sparkleOut {
-      0%   { opacity: 1; transform: translate(-50%,-50%) scale(1); }
-      100% { opacity: 0; transform: translate(-50%,-50%) scale(0); }
-    }
 
     /* ================================================================
        PROGRESS BAR
@@ -267,14 +229,16 @@
     @keyframes introFadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
     .intro-cta {
-      margin-top: 44px; display: inline-flex; align-items: center; gap: 14px;
-      font-family: 'Tenor Sans', sans-serif; font-size: 8px; letter-spacing: 6px;
-      text-transform: uppercase; color: rgba(255,245,210,0.55); cursor: pointer;
-      border: 0.5px solid rgba(200,164,74,0.3); background: rgba(200,164,74,0.04);
-      padding: 12px 32px; opacity: 0;
+      margin-top: 44px; display: inline-flex; align-items: center; gap: 16px;
+      font-family: 'Cinzel', serif; font-size: 13px; letter-spacing: 5px;
+      text-transform: uppercase; color: rgba(255,245,210,0.92); cursor: pointer;
+      border: 1px solid rgba(200,164,74,0.65); background: rgba(200,164,74,0.14);
+      padding: 18px 44px; opacity: 0;
       animation: introFadeUp 1s 2.9s ease both, ctaBlink 3s 3.9s ease-in-out infinite;
       transition: color .4s, border-color .4s, background .4s;
       position: relative; overflow: hidden;
+      box-shadow: 0 0 24px rgba(200,164,74,0.18), inset 0 1px 0 rgba(255,255,255,0.08);
+      text-shadow: 0 1px 8px rgba(0,0,0,0.4);
     }
     .intro-cta::after {
       content: '';
@@ -287,7 +251,7 @@
     .intro-cta:hover { color: rgba(255,245,210,0.95); border-color: rgba(200,164,74,0.7); background: rgba(200,164,74,0.10); }
     .intro-cta-bar { width: 28px; height: 0.5px; background: currentColor; display: inline-block; transition: width .4s; }
     .intro-cta:hover .intro-cta-bar { width: 48px; }
-    @keyframes ctaBlink { 0%, 100% { opacity: 0.4; } 50% { opacity: 1; } }
+    @keyframes ctaBlink { 0%, 100% { opacity: 0.75; } 50% { opacity: 1; } }
 
     .intro-caption {
       position: absolute; bottom: 56px; left: 0; right: 0; text-align: center; z-index: 12;
@@ -312,10 +276,17 @@
     #vinyl-player.playing-glow {
       box-shadow: 0 8px 40px rgba(0,0,0,0.4), 0 0 20px rgba(200,164,74,0.15);
     }
-    #vinyl-player.collapsed { width: 54px; height: 54px; border-radius: 50%; cursor: pointer; }
-    .vp-collapsed-btn { display: none; width: 54px; height: 54px; align-items: center; justify-content: center; cursor: pointer; color: var(--gold); }
+    #vinyl-player.collapsed { width: auto; min-width: 54px; height: 54px; border-radius: 27px; cursor: pointer; display: flex; align-items: center; }
+    .vp-collapsed-btn { display: none; width: 54px; height: 54px; flex-shrink: 0; align-items: center; justify-content: center; cursor: pointer; color: var(--gold); }
+    .vp-collapsed-title {
+      display: none; font-family: 'Cormorant Garamond', serif; font-style: italic;
+      font-size: 13px; color: rgba(255,245,210,0.75); white-space: nowrap;
+      overflow: hidden; text-overflow: ellipsis; max-width: 140px;
+      padding-right: 14px; line-height: 1;
+    }
     .vp-collapsed-icon { width: 20px; height: 20px; }
     #vinyl-player.collapsed .vp-collapsed-btn { display: flex; }
+    #vinyl-player.collapsed .vp-collapsed-title { display: block; }
     #vinyl-player.collapsed .vp-full { display: none; }
     .vp-full { padding: 16px 14px 0; }
     .vp-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
@@ -526,7 +497,7 @@
     .wave-sep svg { display: block; width: 100%; }
     section { padding: 88px 5%; position: relative; }
 
-    .s-eye { font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 6px; text-transform: uppercase; color: var(--ocean2); text-align: center; margin-bottom: 12px; }
+    .s-eye { font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 5px; text-transform: uppercase; color: var(--ocean2); text-align: center; margin-bottom: 12px; }
     .s-title {
       font-family: 'Playfair Display', serif; font-size: clamp(42px, 7vw, 72px);
       color: var(--ink); text-align: center; margin-bottom: 12px; font-style: italic;
@@ -676,10 +647,10 @@
       mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
       -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
     }
-    .photo-strip-track { display: flex; gap: 22px; width: max-content; align-items: flex-end; animation: goLeft 50s linear infinite; }
+    .photo-strip-track { display: flex; gap: 22px; width: max-content; align-items: flex-end; animation: goLeft 50s linear infinite; will-change: transform; transform: translateZ(0); backface-visibility: hidden; }
     .photo-strip-track.reverse { animation: goRight 50s linear infinite; }
-    @keyframes goLeft { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-    @keyframes goRight { 0% { transform: translateX(-50%); } 100% { transform: translateX(0); } }
+    @keyframes goLeft { 0% { transform: translate3d(0,0,0); } 100% { transform: translate3d(-50%,0,0); } }
+    @keyframes goRight { 0% { transform: translate3d(-50%,0,0); } 100% { transform: translate3d(0,0,0); } }
 
     .polaroid {
       flex-shrink: 0; background: #fff; padding: 10px 10px 30px;
@@ -731,7 +702,7 @@
     .tl-item:nth-child(even) .tl-time { text-align: left; order: 3; }
     .tl-item:nth-child(even) .tl-dot { order: 2; }
     .tl-item:nth-child(even) .tl-content { order: 1; text-align: right; }
-    .tl-time { font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 2px; color: var(--ocean2); padding: 4px 0; }
+    .tl-time { font-family: 'Cinzel', serif; font-size: 12px; letter-spacing: 2px; color: var(--ocean2); padding: 4px 0; }
     .tl-dot {
       width: 14px; height: 14px; border-radius: 50%; background: var(--ocean1);
       border: 3px solid var(--foam); box-shadow: 0 0 0 2px rgba(74,179,208,0.3);
@@ -818,32 +789,30 @@
       pointer-events: none;
     }
     .dc-swatches {
-      display: flex; justify-content: center; gap: 0; flex-wrap: nowrap;
-      margin: 0 auto 60px; max-width: 680px; border: 1px solid rgba(200,164,74,0.18);
+      display: flex; justify-content: center; gap: 10px; flex-wrap: nowrap;
+      margin: 0 auto 44px; max-width: 580px;
     }
     .dc-swatch {
       flex: 1; display: flex; flex-direction: column; align-items: stretch; gap: 0;
-      position: relative;
+      position: relative; border-radius: 6px; overflow: hidden;
     }
-    .dc-swatch:not(:last-child) { border-right: 1px solid rgba(200,164,74,0.18); }
-    .dc-color-block { height: 88px; transition: height .35s ease; }
-    .dc-swatch:hover .dc-color-block { height: 104px; }
+    .dc-swatch:not(:last-child) { border-right: none; }
+    .dc-color-block { height: 60px; transition: height .35s ease; }
+    .dc-swatch:hover .dc-color-block { height: 72px; }
     .dc-lbl {
-      font-family: 'Cinzel', serif; font-size: 7.5px; letter-spacing: 2.5px;
+      font-family: 'Cinzel', serif; font-size: 7.5px; letter-spacing: 2px;
       text-transform: uppercase; color: var(--ink2);
-      padding: 12px 10px 14px; text-align: center;
-      border-top: 1px solid rgba(200,164,74,0.14);
+      padding: 8px 6px 10px; text-align: center;
       background: rgba(255,255,255,0.7);
     }
     .dc-rules {
       display: grid; grid-template-columns: repeat(4, 1fr);
-      gap: 0; max-width: 900px; margin: 0 auto 52px;
-      border: 1px solid rgba(200,164,74,0.18);
+      gap: 12px; max-width: 860px; margin: 0 auto 44px;
     }
     .dc-card {
-      padding: 36px 28px 40px; background: #fff;
+      padding: 22px 18px 24px; background: rgba(255,255,255,0.7);
       transition: background .35s ease; position: relative; overflow: hidden;
-      border-right: 1px solid rgba(200,164,74,0.12);
+      border-radius: 8px;
     }
     .dc-card:last-child { border-right: none; }
     .dc-card::before {
@@ -855,8 +824,8 @@
     .dc-card:hover { background: #fdf9f3; }
     .dc-card-num {
       font-family: 'Cormorant', serif; font-weight: 300; font-style: italic;
-      font-size: 52px; color: rgba(200,164,74,0.13); line-height: 1;
-      margin-bottom: 16px; display: block; letter-spacing: -0.02em;
+      font-size: 36px; color: rgba(200,164,74,0.13); line-height: 1;
+      margin-bottom: 10px; display: block; letter-spacing: -0.02em;
       transition: color .35s ease;
     }
     .dc-card:hover .dc-card-num { color: rgba(200,164,74,0.24); }
@@ -891,18 +860,12 @@
     }
     @media (max-width: 760px) {
       .dc-rules { grid-template-columns: repeat(2, 1fr); }
-      .dc-card { border-bottom: 1px solid rgba(200,164,74,0.12); }
-      .dc-card:nth-child(2n) { border-right: none; }
-      .dc-card:nth-last-child(-n+2) { border-bottom: none; }
     }
     @media (max-width: 480px) {
       .dc-rules { grid-template-columns: 1fr; }
-      .dc-card { border-right: none; border-bottom: 1px solid rgba(200,164,74,0.12); }
-      .dc-card:last-child { border-bottom: none; }
-      .dc-swatches { flex-wrap: wrap; border: none; gap: 12px; }
-      .dc-swatch { flex: 0 0 calc(50% - 6px); border: 1px solid rgba(200,164,74,0.18); }
-      .dc-swatch:not(:last-child) { border-right: 1px solid rgba(200,164,74,0.18); }
-      .dc-color-block { height: 72px; }
+      .dc-swatches { flex-wrap: wrap; gap: 10px; }
+      .dc-swatch { flex: 0 0 calc(50% - 5px); }
+      .dc-color-block { height: 52px; }
     }
 
     /* ================================================================
@@ -1023,11 +986,11 @@
     ================================================================ */
     .faq-list { max-width: 660px; margin: 0 auto; }
     .faq-item { border-bottom: 1px solid rgba(200,164,74,.14); }
-    .faq-q { width: 100%; background: none; border: none; padding: 18px 0; display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-family: 'Playfair Display', serif; font-style: italic; font-size: 17px; color: var(--ink); text-align: left; transition: color .3s; }
+    .faq-q { width: 100%; background: none; border: none; padding: 20px 0; display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-family: 'Playfair Display', serif; font-style: italic; font-size: 19px; color: var(--ink); text-align: left; transition: color .3s; }
     .faq-q:hover { color: var(--ocean2); }
     .faq-chev { font-family: 'Cinzel', serif; font-size: 10px; color: var(--ocean2); transition: transform .35s; flex-shrink: 0; margin-left: 10px; }
     .faq-item.open .faq-chev { transform: rotate(180deg); }
-    .faq-a { max-height: 0; overflow: hidden; transition: max-height .5s ease, padding .4s ease; font-family: 'Cormorant Garamond', serif; font-size: 15.5px; color: var(--ink2); line-height: 1.8; padding: 0; }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height .5s ease, padding .4s ease; font-family: 'Cormorant Garamond', serif; font-size: 17px; color: var(--ink2); line-height: 1.85; padding: 0; }
     .faq-a strong { color: var(--ink); font-weight: 600; }
     .faq-a em { color: var(--ink2); font-style: italic; }
     .faq-item.open .faq-a { max-height: 600px; padding-bottom: 20px; }
@@ -1303,7 +1266,7 @@
       .ft-links { flex-wrap: wrap; justify-content: center; gap: 8px 18px; }
       #vinyl-player { width: 260px; right: 10px; bottom: 10px; }
       .intro-names { font-size: clamp(52px, 17vw, 96px); }
-      .intro-cta { padding: 10px 20px; font-size: 7px; letter-spacing: 4px; }
+      .intro-cta { padding: 16px 28px; font-size: 11px; letter-spacing: 4px; }
     }
 
     /* ================================================================
@@ -1521,122 +1484,72 @@
     .slide-dot.active { background: var(--gold); width: 44px; }
 
     /* ================================================================
-       RSVP POPUP NOTIFICATION — centered modal overlay
+       RSVP POPUP NOTIFICATION — small side toast (bottom-left)
     ================================================================ */
-    .rsvp-popup-overlay {
-      position: fixed; inset: 0; z-index: 9500;
-      background: rgba(8,18,28,0.72);
-      backdrop-filter: blur(8px);
-      display: flex; align-items: center; justify-content: center;
-      padding: 20px;
-      opacity: 0; pointer-events: none;
-      transition: opacity .6s ease;
-    }
-    .rsvp-popup-overlay.visible {
-      opacity: 1; pointer-events: all;
-    }
-    .rsvp-popup {
-      position: relative;
+    #rsvpNotification {
+      position: fixed;
+      bottom: 90px;
+      left: 18px;
+      z-index: 9500;
+      width: 280px;
       background: linear-gradient(160deg, #fffef8 0%, #fdf8ee 100%);
-      border: 1px solid rgba(200,164,74,0.35);
-      box-shadow: 0 24px 80px rgba(0,0,0,0.35), 0 0 0 1px rgba(200,164,74,0.08), inset 0 1px 0 rgba(255,255,255,0.9);
-      max-width: 420px; width: 100%;
-      text-align: center; padding: 52px 40px 44px;
-      transform: translateY(28px) scale(0.96);
-      transition: transform .6s cubic-bezier(.16,1,.3,1), opacity .6s ease;
+      border: 1px solid rgba(200,164,74,0.45);
+      box-shadow: 0 8px 40px rgba(0,0,0,0.22), 0 0 0 1px rgba(200,164,74,0.08);
+      padding: 18px 16px 16px;
+      transform: translateX(calc(-100% - 28px));
       opacity: 0;
+      transition: transform 0.55s cubic-bezier(.16,1,.3,1), opacity 0.45s ease;
+      pointer-events: none;
       overflow: hidden;
     }
-    .rsvp-popup-overlay.visible .rsvp-popup {
-      transform: translateY(0) scale(1); opacity: 1;
-    }
-    .rsvp-popup::before {
+    #rsvpNotification::before {
       content: '';
-      position: absolute; top: 0; left: 10%; right: 10%; height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(200,164,74,0.55), transparent);
+      position: absolute; top: 0; left: 10%; right: 10%; height: 1.5px;
+      background: linear-gradient(90deg, transparent, rgba(200,164,74,0.7), transparent);
     }
-    .rsvp-popup::after {
-      content: '';
-      position: absolute; inset: 0; pointer-events: none;
-      background: radial-gradient(ellipse at 50% 0%, rgba(200,164,74,0.06) 0%, transparent 65%);
+    #rsvpNotification.visible {
+      transform: translateX(0);
+      opacity: 1;
+      pointer-events: all;
     }
-    .rsvp-popup-close {
-      position: absolute; top: 16px; right: 18px;
+    .rsvp-toast-close {
+      position: absolute; top: 9px; right: 11px;
       background: none; border: none; cursor: pointer;
-      font-size: 13px; color: rgba(28,16,8,0.28);
-      font-family: 'Cinzel', serif; letter-spacing: 1px;
-      transition: color .2s, transform .2s;
-      padding: 4px 8px; line-height: 1;
+      font-size: 11px; color: var(--ink3); transition: color .2s; line-height: 1;
+      padding: 2px 4px;
     }
-    .rsvp-popup-close:hover { color: rgba(28,16,8,0.7); transform: scale(1.15); }
-    .rsvp-popup-sparkle {
-      font-size: 22px; display: block; margin-bottom: 14px;
-      animation: popupSparkle 2.4s ease-in-out infinite;
+    .rsvp-toast-close:hover { color: var(--ink); }
+    .rsvp-toast-eyebrow {
+      font-family: 'Cinzel', serif; font-size: 8px; letter-spacing: 3px;
+      text-transform: uppercase; color: var(--gold-dark); display: block; margin-bottom: 5px; opacity: 0.8;
     }
-    @keyframes popupSparkle {
-      0%,100% { transform: scale(1) rotate(-6deg); opacity: 0.7; }
-      50% { transform: scale(1.18) rotate(6deg); opacity: 1; }
+    .rsvp-toast-title {
+      font-family: 'Playfair Display', serif; font-style: italic; font-size: 17px;
+      color: var(--ink); margin-bottom: 6px; line-height: 1.2;
     }
-    .rsvp-popup-eyebrow {
-      font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 5px;
-      text-transform: uppercase; color: var(--ocean2); margin-bottom: 14px; display: block;
+    .rsvp-toast-body {
+      font-family: 'Cormorant Garamond', serif; font-size: 14px;
+      color: var(--ink2); line-height: 1.6; margin-bottom: 10px;
     }
-    .rsvp-popup-title {
-      font-family: 'Playfair Display', serif; font-style: italic; font-size: 32px;
-      color: #0e0804; line-height: 1.15; margin-bottom: 10px;
+    .rsvp-toast-deadline {
+      font-family: 'Cinzel', serif; font-size: 7.5px; letter-spacing: 1.5px;
+      text-transform: uppercase; color: var(--ocean2); display: block; margin-bottom: 12px; opacity: 0.8;
     }
-    .rsvp-popup-rule {
-      width: 60px; height: 1px; margin: 16px auto;
-      background: linear-gradient(90deg, transparent, var(--gold), transparent);
-    }
-    .rsvp-popup-body {
-      font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 17px;
-      color: rgba(28,16,8,0.72); line-height: 1.75; margin-bottom: 28px;
-    }
-    .rsvp-popup-deadline {
-      font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 3px;
-      text-transform: uppercase; color: rgba(28,16,8,0.35); display: block; margin-bottom: 24px;
-    }
-    .rsvp-popup-cta {
-      display: inline-flex; align-items: center; gap: 10px;
-      font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 4px;
+    .rsvp-toast-cta {
+      display: inline-flex; align-items: center; gap: 7px;
+      font-family: 'Cinzel', serif; font-size: 8px; letter-spacing: 2px;
       text-transform: uppercase; color: #fff;
       background: linear-gradient(135deg, var(--ocean1), var(--ocean2));
-      padding: 13px 32px; text-decoration: none;
-      box-shadow: 0 6px 24px rgba(30,127,168,.3);
+      padding: 9px 18px; text-decoration: none; border-radius: 40px;
       transition: transform .2s, box-shadow .2s;
-      position: relative; overflow: hidden;
     }
-    .rsvp-popup-cta::after {
-      content: '';
-      position: absolute; inset: 0;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
-      transform: translateX(-100%); transition: transform .5s ease;
+    .rsvp-toast-cta:hover { transform: translateY(-1px); box-shadow: 0 4px 14px rgba(30,127,168,.4); }
+    .rsvp-toast-progress {
+      position: absolute; bottom: 0; left: 0; height: 2px;
+      background: linear-gradient(90deg, var(--ocean2), var(--gold));
+      animation: toastProgress 11s linear forwards;
     }
-    .rsvp-popup-cta:hover::after { transform: translateX(100%); }
-    .rsvp-popup-cta:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(30,127,168,.45); }
-    @media (max-width: 480px) {
-      .rsvp-popup { padding: 44px 24px 36px; }
-      .rsvp-popup-title { font-size: 26px; }
-    }
-    /* Floating sparkle particles inside popup */
-    .popup-sparkles { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
-    .ps {
-      position: absolute; color: var(--gold); font-size: 10px;
-      animation: psFloat linear infinite;
-      opacity: 0;
-    }
-    .ps1 { left: 8%;  top: 20%; animation-duration: 4.2s; animation-delay: 0s;    font-size: 9px;  }
-    .ps2 { left: 88%; top: 15%; animation-duration: 3.8s; animation-delay: 0.7s;  font-size: 7px;  }
-    .ps3 { left: 15%; top: 75%; animation-duration: 5.0s; animation-delay: 1.2s;  font-size: 11px; }
-    .ps4 { left: 80%; top: 70%; animation-duration: 4.5s; animation-delay: 0.4s;  font-size: 8px;  }
-    .ps5 { left: 50%; top: 5%;  animation-duration: 3.5s; animation-delay: 1.8s;  font-size: 10px; }
-    @keyframes psFloat {
-      0%   { opacity: 0;   transform: translateY(0) rotate(0deg) scale(0.6); }
-      15%  { opacity: 0.8; }
-      80%  { opacity: 0.5; }
-      100% { opacity: 0;   transform: translateY(-40px) rotate(180deg) scale(1.2); }
-    }
+    @keyframes toastProgress { from { width: 100%; } to { width: 0%; } }
 
     /* ================================================================
        ALBUM SHARING SECTION
@@ -1711,6 +1624,45 @@
 
     /* WAVEFORM SEPARATOR — gold shimmer version */
     @keyframes waveScroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    /* ================================================================
+       GLOBAL READABILITY IMPROVEMENTS
+    ================================================================ */
+    .chip { font-size: 10px !important; padding: 6px 14px !important; }
+    .map-btn { font-size: 10px !important; }
+    .dc-lbl { font-size: 10px !important; letter-spacing: 2px !important; }
+    .dc-card-title { font-size: 11px !important; letter-spacing: 2.5px !important; }
+    .dc-card-text { font-size: 16px !important; }
+    .dc-avoid { font-size: 17px !important; }
+    .dc-avoid-label { font-size: 10px !important; }
+    .ent-panel-label { font-size: 10px !important; letter-spacing: 3.5px !important; }
+    .venue-img-side span { font-size: 10px !important; }
+    .venue-img-side p { font-size: 14px !important; }
+    .venue-name { font-size: 22px !important; }
+    .venue-addr { font-size: 16px !important; }
+    .tl-event { font-size: 19px !important; }
+    .tl-desc { font-size: 16px !important; }
+    .field label { font-size: 10px !important; letter-spacing: 2px !important; }
+    .unplugged-title { font-size: 12px !important; }
+    .unplugged-body { font-size: 17px !important; }
+    .nav-link { font-size: 10px !important; }
+    .nav-mobile-menu a { font-size: 11px !important; }
+    .ft-links a { font-size: 10px !important; }
+    .ft-copy { font-size: 10px !important; }
+    .hero-cta { font-size: 11px !important; padding: 14px 32px !important; letter-spacing: 4px !important; }
+    .rsvp-big-btn { font-size: 12px !important; }
+    .ht-copy-btn { font-size: 11px !important; }
+    .psponsor-role-tag { font-size: 9px !important; }
+    .album-step-desc { font-size: 16px !important; }
+    .album-share-text { font-size: 17px !important; }
+    .album-qr-hint { font-size: 9px !important; }
+    .gift-note p { font-size: 18px !important; }
+    .rsvp-note { font-size: 18px !important; }
+    @media (max-width: 480px) {
+      .chip { font-size: 9px !important; }
+      .map-btn { font-size: 9px !important; }
+      .hero-cta { font-size: 10px !important; letter-spacing: 3px !important; }
+    }
+
   </style>
 </head>
 
@@ -1742,34 +1694,20 @@
     </div>
   </nav>
 
-  <!-- RSVP POPUP NOTIFICATION -->
-  <div id="rsvpNotification" class="rsvp-popup-overlay" style="display:none;" onclick="if(event.target===this)dismissNotif()">
-    <div class="rsvp-popup">
-      <button class="rsvp-popup-close" onclick="dismissNotif()" aria-label="Close">✕</button>
-      <!-- sparkle particles inside popup -->
-      <div class="popup-sparkles" aria-hidden="true">
-        <span class="ps ps1">✦</span>
-        <span class="ps ps2">✧</span>
-        <span class="ps ps3">✦</span>
-        <span class="ps ps4">✧</span>
-        <span class="ps ps5">✦</span>
-      </div>
-      <span class="rsvp-popup-sparkle">✦</span>
-      <span class="rsvp-popup-eyebrow">You're Invited</span>
-      <div class="rsvp-popup-title">RSVP With Love</div>
-      <div class="rsvp-popup-rule"></div>
-      <p class="rsvp-popup-body">Kindly confirm your attendance to our wedding celebration. Your presence means the world to us.</p>
-      <span class="rsvp-popup-deadline">Deadline &nbsp;·&nbsp; June 13, 2026</span>
-      <a href="https://example.com" target="_blank" rel="noreferrer" class="rsvp-popup-cta" onclick="dismissNotif()">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        Kindly Reply
-      </a>
-    </div>
+  <!-- RSVP TOAST NOTIFICATION -->
+  <div id="rsvpNotification" style="display:none;">
+    <button class="rsvp-toast-close" onclick="dismissNotif()" aria-label="Close">✕</button>
+    <span class="rsvp-toast-eyebrow">You're Invited</span>
+    <div class="rsvp-toast-title">RSVP With Love</div>
+    <p class="rsvp-toast-body">Kindly confirm your attendance. Your presence means the world to us.</p>
+    <span class="rsvp-toast-deadline">Deadline · June 13, 2026</span>
+    <a href="https://example.com" target="_blank" rel="noreferrer" class="rsvp-toast-cta" onclick="dismissNotif()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      Kindly Reply
+    </a>
+    <div class="rsvp-toast-progress"></div>
   </div>
 
-  <!-- CUSTOM CURSOR -->
-  <div id="cursor"></div>
-  <div id="cursor-dot"></div>
 
   <!-- PROGRESS BAR -->
   <div class="progress">
@@ -1845,6 +1783,7 @@
         <circle cx="12" cy="12" r="3" />
       </svg>
     </div>
+    <span class="vp-collapsed-title" id="vpCollapsedTitle" onclick="expandVinyl()">Balisong</span>
     <div class="vp-full">
       <div class="vp-header">
         <div class="vp-label">Now Playing</div>
@@ -1879,7 +1818,7 @@
       <button class="vp-playlist-toggle" onclick="toggleVinylPlaylist()">&#9650; Playlist</button>
       <div class="vp-playlist" id="vpPlaylist">
         <div class="vp-track active" onclick="selectVinylTrack(0)"><span class="vp-track-num">1</span>
-          <div class="vp-track-info"><div class="vp-track-name">Balisong</div><div class="vp-track-artist">Rico Blanco</div></div>
+          <div class="vp-track-info"><div class="vp-track-name">Walking Away</div><div class="vp-track-artist">Justin Bieber</div></div>
           <a href="https://www.youtube.com/watch?v=SampleLink1" target="_blank" rel="noreferrer" onclick="event.stopPropagation()" title="Open on YouTube" style="color:var(--gold);opacity:0.5;font-size:10px;text-decoration:none;transition:opacity .2s;flex-shrink:0;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.5">▶</a>
           <span class="vp-track-dot"></span>
         </div>
@@ -1889,12 +1828,12 @@
           <span class="vp-track-dot"></span>
         </div>
         <div class="vp-track" onclick="selectVinylTrack(2)"><span class="vp-track-num">3</span>
-          <div class="vp-track-info"><div class="vp-track-name">All of Me</div><div class="vp-track-artist">John Legend</div></div>
+          <div class="vp-track-info"><div class="vp-track-name">Balisong</div><div class="vp-track-artist">Rico Blanco</div></div>
           <a href="https://www.youtube.com/watch?v=450p7goxZqg" target="_blank" rel="noreferrer" onclick="event.stopPropagation()" title="Open on YouTube" style="color:var(--gold);opacity:0.5;font-size:10px;text-decoration:none;transition:opacity .2s;flex-shrink:0;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.5">▶</a>
           <span class="vp-track-dot"></span>
         </div>
         <div class="vp-track" onclick="selectVinylTrack(3)"><span class="vp-track-num">4</span>
-          <div class="vp-track-info"><div class="vp-track-name">Can't Help Falling in Love</div><div class="vp-track-artist">Elvis Presley</div></div>
+          <div class="vp-track-info"><div class="vp-track-name">XXL</div><div class="vp-track-artist">Lany</div></div>
           <a href="https://www.youtube.com/watch?v=vGJTaP6anOU" target="_blank" rel="noreferrer" onclick="event.stopPropagation()" title="Open on YouTube" style="color:var(--gold);opacity:0.5;font-size:10px;text-decoration:none;transition:opacity .2s;flex-shrink:0;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.5">▶</a>
           <span class="vp-track-dot"></span>
         </div>
@@ -1971,27 +1910,27 @@
       <div class="photo-strip-wrapper">
         <div class="photo-strip-track">
           <!-- SET A -->
-          <div class="polaroid portrait"><div class="polaroid-img"><img src="1.jpg" alt="Photo 1"></div></div>
-          <div class="polaroid landscape"><div class="polaroid-img"><img src="2.jpg" alt="Photo 2"></div></div>
-          <div class="polaroid portrait"><div class="polaroid-img"><img src="3.jpg" alt="Photo 3"></div></div>
-          <div class="polaroid landscape"><div class="polaroid-img"><img src="4.jpg" alt="Photo 4"></div></div>
-          <div class="polaroid portrait"><div class="polaroid-img"><img src="5.jpg" alt="Photo 5"></div></div>
-          <div class="polaroid landscape"><div class="polaroid-img"><img src="6.jpg" alt="Photo 6"></div></div>
-          <div class="polaroid portrait"><div class="polaroid-img"><img src="7.jpg" alt="Photo 7"></div></div>
-          <div class="polaroid landscape"><div class="polaroid-img"><img src="8.jpg" alt="Photo 8"></div></div>
-          <div class="polaroid portrait"><div class="polaroid-img"><img src="9.jpg" alt="Photo 9"></div></div>
-          <div class="polaroid landscape"><div class="polaroid-img"><img src="10.jpg" alt="Photo 10"></div></div>
+          <div class="polaroid portrait"><div class="polaroid-img"><img src="1.jpg" alt="Photo 1" loading="lazy" decoding="async"></div></div>
+          <div class="polaroid landscape"><div class="polaroid-img"><img src="2.jpg" alt="Photo 2" loading="lazy" decoding="async"></div></div>
+          <div class="polaroid portrait"><div class="polaroid-img"><img src="3.jpg" alt="Photo 3" loading="lazy" decoding="async"></div></div>
+          <div class="polaroid landscape"><div class="polaroid-img"><img src="4.jpg" alt="Photo 4" loading="lazy" decoding="async"></div></div>
+          <div class="polaroid portrait"><div class="polaroid-img"><img src="5.jpg" alt="Photo 5" loading="lazy" decoding="async"></div></div>
+          <div class="polaroid landscape"><div class="polaroid-img"><img src="6.jpg" alt="Photo 6" loading="lazy" decoding="async"></div></div>
+          <div class="polaroid portrait"><div class="polaroid-img"><img src="7.jpg" alt="Photo 7" loading="lazy" decoding="async"></div></div>
+          <div class="polaroid landscape"><div class="polaroid-img"><img src="8.jpg" alt="Photo 8" loading="lazy" decoding="async"></div></div>
+          <div class="polaroid portrait"><div class="polaroid-img"><img src="9.jpg" alt="Photo 9" loading="lazy" decoding="async"></div></div>
+          <div class="polaroid landscape"><div class="polaroid-img"><img src="10.jpg" alt="Photo 10" loading="lazy" decoding="async"></div></div>
           <!-- SET B — duplicate for seamless loop -->
-          <div class="polaroid portrait"><div class="polaroid-img"><img src="11.jpg" alt="Photo 1"></div></div>
-          <div class="polaroid landscape"><div class="polaroid-img"><img src="12.jpg" alt="Photo 2"></div></div>
-          <div class="polaroid portrait"><div class="polaroid-img"><img src="13.jpg" alt="Photo 3"></div></div>
-          <div class="polaroid landscape"><div class="polaroid-img"><img src="14.jpg" alt="Photo 4"></div></div>
-          <div class="polaroid portrait"><div class="polaroid-img"><img src="15.jpg" alt="Photo 5"></div></div>
-          <div class="polaroid landscape"><div class="polaroid-img"><img src="16.jpg" alt="Photo 6"></div></div>
-          <div class="polaroid portrait"><div class="polaroid-img"><img src="17.jpg" alt="Photo 7"></div></div>
-          <div class="polaroid landscape"><div class="polaroid-img"><img src="18.jpg" alt="Photo 8"></div></div>
-          <div class="polaroid portrait"><div class="polaroid-img"><img src="19.jpg" alt="Photo 9"></div></div>
-          <div class="polaroid landscape"><div class="polaroid-img"><img src="20.jpg" alt="Photo 10"></div></div>
+          <div class="polaroid portrait"><div class="polaroid-img"><img src="11.jpg" alt="Photo 1" loading="lazy" decoding="async"></div></div>
+          <div class="polaroid landscape"><div class="polaroid-img"><img src="12.jpg" alt="Photo 2" loading="lazy" decoding="async"></div></div>
+          <div class="polaroid portrait"><div class="polaroid-img"><img src="13.jpg" alt="Photo 3" loading="lazy" decoding="async"></div></div>
+          <div class="polaroid landscape"><div class="polaroid-img"><img src="14.jpg" alt="Photo 4" loading="lazy" decoding="async"></div></div>
+          <div class="polaroid portrait"><div class="polaroid-img"><img src="15.jpg" alt="Photo 5" loading="lazy" decoding="async"></div></div>
+          <div class="polaroid landscape"><div class="polaroid-img"><img src="16.jpg" alt="Photo 6" loading="lazy" decoding="async"></div></div>
+          <div class="polaroid portrait"><div class="polaroid-img"><img src="17.jpg" alt="Photo 7" loading="lazy" decoding="async"></div></div>
+          <div class="polaroid landscape"><div class="polaroid-img"><img src="18.jpg" alt="Photo 8" loading="lazy" decoding="async"></div></div>
+          <div class="polaroid portrait"><div class="polaroid-img"><img src="19.jpg" alt="Photo 9" loading="lazy" decoding="async"></div></div>
+          <div class="polaroid landscape"><div class="polaroid-img"><img src="20.jpg" alt="Photo 10" loading="lazy" decoding="async"></div></div>
         </div>
       </div>
     </div>
@@ -2509,45 +2448,8 @@
       <p>The greatest gift we could receive is celebrating our special day with you.<br><br>Should you wish to bless us with a gift, a monetary gift would be much appreciated.</p>
     </div>
   </section>
-  <!-- RSVP -->
-  <section id="rsvp">
-    <p class="s-eye reveal">💌 We Can't Wait</p>
-    <h2 class="s-title reveal">RSVP With Love</h2>
-    <p class="rsvp-note reveal">Please confirm your attendance by <strong>June 13, 2026</strong>. We can&rsquo;t wait to celebrate with you.</p>
-    <div class="rsvp-btn-center reveal">
-      <a href="https://example.com" target="_blank" rel="noreferrer" class="rsvp-big-btn" style="text-decoration:none;display:inline-flex;">
-        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" /><polyline points="22,6 12,13 2,6" /></svg>
-        Kindly Reply
-      </a>
-      <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:var(--ink3);margin-top:14px;">Deadline: June 13, 2026</p>
-    </div>
-  </section>
 
-  <!-- SEAT FINDER -->
-  <section id="seatfinder" style="background:linear-gradient(180deg,var(--sand1),var(--foam));">
-    <p class="s-eye reveal">🪑 Seat Finder</p>
-    <h2 class="s-title reveal">Find Your Table</h2>
-    <p class="s-sub reveal">Your seating assignment is just one tap away. Click below to view the complete seating chart.</p>
-    <div class="finder-shell reveal" style="text-align:center;padding:40px 32px;">
-      <div style="margin-bottom:28px;">
-        <svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1" width="52" height="52" style="opacity:0.7;">
-          <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
-          <circle cx="12" cy="7" r="4"/>
-          <path d="M16 3.13a4 4 0 010 7.75"/>
-          <path d="M21 21v-2a4 4 0 00-3-3.87"/>
-        </svg>
-      </div>
-      <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px;color:var(--ink2);line-height:1.75;margin-bottom:32px;max-width:400px;margin-left:auto;margin-right:auto;">
-        The seating chart will be available once finalized. Tap the button below to view your assigned table.
-      </p>
-      <a href="#" id="seatFinderLink" target="_blank" rel="noreferrer" class="rsvp-big-btn" style="display:inline-flex;text-decoration:none;">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-        View Seating Chart
-      </a>
-    </div>
-  </section>
-
-  <!-- FAQ -->
+    <!-- FAQ -->
   <section id="faq" style="background:linear-gradient(180deg,var(--foam),var(--sand1));">
     <p class="s-eye reveal">Need to Know</p>
     <h2 class="s-title reveal">Wedding FAQs</h2>
@@ -2602,7 +2504,7 @@
       </div>
       <div class="faq-item reveal">
         <button class="faq-q" onclick="toggleFaq(this)">Can I share photos on social media? <span class="faq-chev">&#9660;</span></button>
-        <div class="faq-a">Absolutely! We'd love to see the celebration through your eyes. During the reception, please feel free to snap and share all the beautiful moments. Use our wedding hashtag <strong>#ChristianAndJennaSeasForever</strong> when posting so we can find and cherish your photos. You can also upload directly to our shared guest album — check the Photo Album section for details.</div>
+        <div class="faq-a">Absolutely! We'd love to see the celebration through your eyes. During the reception, please feel free to snap and share all the beautiful moments. Use our wedding hashtag when posting so we can find and cherish your photos. You can also upload directly to our shared guest album — check the Photo Album section for details.</div>
       </div>
       <div class="faq-item reveal">
         <button class="faq-q" onclick="toggleFaq(this)">What should I do if I can't attend? <span class="faq-chev">&#9660;</span></button>
@@ -2610,6 +2512,62 @@
       </div>
     </div>
   </section>
+
+    <!-- GUESTBOOK -->
+  <section id="guestbook" style="background:linear-gradient(180deg,var(--ocean3),var(--ocean2));padding:80px 5%;">
+    <p class="s-eye reveal" style="color:rgba(255,255,255,.4);">Digital Guestbook</p>
+    <h2 class="s-title reveal" style="color:#fff;">Leave a Live Message</h2>
+    <p class="s-sub reveal" style="color:rgba(255,255,255,.5);">Share your blessings for the couple.</p>
+    <div style="max-width:600px;margin:0 auto;" class="reveal">
+      <form id="guestbookForm" class="stack-form">
+        <div class="field"><label for="guestbookName" style="color:rgba(255,255,255,.45);">Your Name</label><input class="input" id="guestbookName" type="text" placeholder="Type your name" style="background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.12);color:#fff;" required></div>
+        <div class="field"><label for="guestbookMessage" style="color:rgba(255,255,255,.45);">Message</label><textarea class="textarea" id="guestbookMessage" placeholder="Write your love-filled message here..." style="background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.12);color:#fff;" required></textarea></div>
+        <div class="form-actions"><button class="btn primary" type="submit">Post Message</button></div>
+        <div class="status" id="guestbookStatus" style="color:var(--gold-light);"></div>
+      </form>
+    </div>
+    <div class="message-list" id="messageList"></div>
+  </section>
+
+  <!-- RSVP -->
+  <section id="rsvp">
+    <p class="s-eye reveal">💌 We Can't Wait</p>
+    <h2 class="s-title reveal">RSVP With Love</h2>
+    <p class="rsvp-note reveal">Please confirm your attendance by <strong>June 13, 2026</strong>. We can&rsquo;t wait to celebrate with you.</p>
+    <div class="rsvp-btn-center reveal">
+      <a href="https://example.com" target="_blank" rel="noreferrer" class="rsvp-big-btn" style="text-decoration:none;display:inline-flex;">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" /><polyline points="22,6 12,13 2,6" /></svg>
+        Kindly Reply
+      </a>
+      <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:var(--ink3);margin-top:14px;">Deadline: June 13, 2026</p>
+    </div>
+  </section>
+
+  <!-- SEAT FINDER -->
+  <section id="seatfinder" style="background:linear-gradient(180deg,var(--sand1),var(--foam));">
+    <p class="s-eye reveal">🪑 Seat Finder</p>
+    <h2 class="s-title reveal">Find Your Table</h2>
+    <p class="s-sub reveal">Your seating assignment is just one tap away. Click below to view the complete seating chart.</p>
+    <div class="finder-shell reveal" style="text-align:center;padding:40px 32px;">
+      <div style="margin-bottom:28px;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1" width="52" height="52" style="opacity:0.7;">
+          <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
+          <circle cx="12" cy="7" r="4"/>
+          <path d="M16 3.13a4 4 0 010 7.75"/>
+          <path d="M21 21v-2a4 4 0 00-3-3.87"/>
+        </svg>
+      </div>
+      <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px;color:var(--ink2);line-height:1.75;margin-bottom:32px;max-width:400px;margin-left:auto;margin-right:auto;">
+        The seating chart will be available once finalized. Tap the button below to view your assigned table.
+      </p>
+      <a href="#" id="seatFinderLink" target="_blank" rel="noreferrer" class="rsvp-big-btn" style="display:inline-flex;text-decoration:none;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        View Seating Chart
+      </a>
+    </div>
+  </section>
+
+
 
   <!-- ALBUM SHARING -->
   <section id="album" style="background:linear-gradient(180deg,var(--sand1),var(--foam));text-align:center;">
@@ -2642,12 +2600,12 @@
         </div>
         <div class="album-step">
           <span class="album-step-num">03</span>
-          <span class="album-step-desc">Add a caption or keep it simple — both are lovely</span>
+          <span class="album-step-desc">Share your favorite moments with us!</span>
         </div>
       </div>
       <div class="album-qr-wrap">
-        <img src="https://chart.googleapis.com/chart?chs=120x120&cht=qr&chl=https://photos.google.com/share/ChristianAndJenna2026&choe=UTF-8" alt="Album QR" class="album-qr-img">
-        <p class="album-qr-hint">Replace this with your Google Photos or Dropbox share link</p>
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://photos.google.com/share/ChristianAndJenna2026&color=1c1008&bgcolor=ffffff" alt="Album QR" class="album-qr-img">
+       
       </div>
       <a href="#" class="album-upload-btn" id="albumUploadBtn" target="_blank" rel="noreferrer">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
@@ -2659,21 +2617,7 @@
     </div>
   </section>
 
-  <!-- GUESTBOOK -->
-  <section id="guestbook" style="background:linear-gradient(180deg,var(--ocean3),var(--ocean2));padding:80px 5%;">
-    <p class="s-eye reveal" style="color:rgba(255,255,255,.4);">Digital Guestbook</p>
-    <h2 class="s-title reveal" style="color:#fff;">Leave a Live Message</h2>
-    <p class="s-sub reveal" style="color:rgba(255,255,255,.5);">Share your blessings for the couple.</p>
-    <div style="max-width:600px;margin:0 auto;" class="reveal">
-      <form id="guestbookForm" class="stack-form">
-        <div class="field"><label for="guestbookName" style="color:rgba(255,255,255,.45);">Your Name</label><input class="input" id="guestbookName" type="text" placeholder="Type your name" style="background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.12);color:#fff;" required></div>
-        <div class="field"><label for="guestbookMessage" style="color:rgba(255,255,255,.45);">Message</label><textarea class="textarea" id="guestbookMessage" placeholder="Write your love-filled message here..." style="background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.12);color:#fff;" required></textarea></div>
-        <div class="form-actions"><button class="btn primary" type="submit">Post Message</button></div>
-        <div class="status" id="guestbookStatus" style="color:var(--gold-light);"></div>
-      </form>
-    </div>
-    <div class="message-list" id="messageList"></div>
-  </section>
+
 
   <!-- FOOTER WAVES -->
   <div style="position:relative;overflow:hidden;height:70px;background:linear-gradient(180deg,var(--ocean2),var(--ink));">
@@ -2702,7 +2646,7 @@
       <li><a href="#rsvp">RSVP</a></li>
       <li><a href="#faq">FAQs</a></li>
     </ul>
-    <div class="ft-copy">Made with love for Christian &amp; Jenna &nbsp;&middot;&nbsp; #ChristianAndJennaSeasForever</div>
+    <div class="ft-copy">Made with love for Christian &amp; Jenna</div>
   </footer>
 
   <script>
@@ -2723,87 +2667,6 @@
         { name: "Noelyn Therese Escondo", seat: "Secondary Sponsors Table" }
       ]
     };
-
-    /* ================================================================
-       CUSTOM CURSOR — smooth lag + sparkle trail
-    ================================================================ */
-    const cursorEl = document.getElementById('cursor');
-    const cursorDot = document.getElementById('cursor-dot');
-    let cx = 0, cy = 0, dx = 0, dy = 0;
-    let sparkleThrottle = 0;
-
-    document.addEventListener('mousemove', e => {
-      dx = e.clientX; dy = e.clientY;
-      cursorDot.style.left = dx + 'px';
-      cursorDot.style.top = dy + 'px';
-
-      // Sparkle trail — throttled
-      const now = Date.now();
-      if (now - sparkleThrottle > 80) {
-        sparkleThrottle = now;
-        spawnCursorSparkle(dx, dy);
-      }
-    });
-
-    (function animateCursor() {
-      cx += (dx - cx) * .12;
-      cy += (dy - cy) * .12;
-      cursorEl.style.left = cx + 'px';
-      cursorEl.style.top = cy + 'px';
-      requestAnimationFrame(animateCursor);
-    })();
-
-    document.addEventListener('mousedown', () => {
-      cursorEl.style.transform = 'translate(-50%,-50%) scale(.55)';
-      spawnClickBurst(dx, dy);
-    });
-    document.addEventListener('mouseup', () => cursorEl.style.transform = 'translate(-50%,-50%) scale(1)');
-
-    // Cursor hover effect on interactive elements
-    const hoverTargets = 'a, button, .polaroid, .venue-card, .ent-panel, .dc-card, .faq-q, .hero-dot, .vp-track';
-    document.querySelectorAll(hoverTargets).forEach(el => {
-      el.addEventListener('mouseenter', () => cursorEl.classList.add('hover'));
-      el.addEventListener('mouseleave', () => cursorEl.classList.remove('hover'));
-    });
-
-    function spawnCursorSparkle(x, y) {
-      const sparkle = document.createElement('div');
-      sparkle.className = 'cursor-sparkle';
-      const size = 3 + Math.random() * 5;
-      const colors = ['rgba(200,164,74,0.9)', 'rgba(240,220,160,0.9)', 'rgba(255,248,220,0.85)', 'rgba(200,164,74,0.6)'];
-      const color = colors[Math.floor(Math.random() * colors.length)];
-      const dx2 = (Math.random() - 0.5) * 20;
-      const dy2 = -Math.random() * 20;
-      sparkle.style.cssText = `
-        left:${x}px; top:${y}px; width:${size}px; height:${size}px;
-        background:${color}; animation-duration:${0.5 + Math.random() * 0.4}s;
-      `;
-      document.body.appendChild(sparkle);
-      sparkle.animate([
-        { transform: `translate(-50%,-50%) scale(1)`, opacity: 1 },
-        { transform: `translate(calc(-50% + ${dx2}px), calc(-50% + ${dy2}px)) scale(0)`, opacity: 0 }
-      ], { duration: 600 + Math.random() * 300, easing: 'ease-out', fill: 'forwards' })
-        .onfinish = () => sparkle.remove();
-    }
-
-    function spawnClickBurst(x, y) {
-      for (let i = 0; i < 8; i++) {
-        setTimeout(() => {
-          const s = document.createElement('div');
-          s.className = 'cursor-sparkle';
-          const angle = (i / 8) * Math.PI * 2;
-          const dist = 20 + Math.random() * 20;
-          const dx2 = Math.cos(angle) * dist;
-          const dy2 = Math.sin(angle) * dist;
-          s.style.cssText = `left:${x}px; top:${y}px; width:4px; height:4px; background:rgba(200,164,74,0.9);`;
-          document.body.appendChild(s);
-          s.animate([
-            { transform: `translate(-50%,-50%) scale(1)`, opacity: 1 },
-            { transform: `translate(calc(-50% + ${dx2}px), calc(-50% + ${dy2}px)) scale(0)`, opacity: 0 }
-          ], { duration: 500, easing: 'ease-out', fill: 'forwards' }).onfinish = () => s.remove();
-        }, i * 15);
-      }
-    }
 
     /* ================================================================
        TAP RIPPLE — mobile touch feedback
@@ -2873,27 +2736,31 @@
       overlay.classList.add('hidden-overlay');
       const videoWrap = document.getElementById('heroVideoWrap');
       if (videoWrap) videoWrap.classList.add('visible');
-      // Try to play intro video (may be blocked by browser before user interaction)
       const introVid = document.getElementById('introVideo');
       if (introVid) introVid.play().catch(() => {});
-      // Burst of petals on close
       spawnPetals();
       setTimeout(() => overlay.style.display = 'none', 1800);
+
+      // AUTO-PLAY MUSIC — synchronously inside this user gesture tap
+      if (!playing) {
+        const disc = document.getElementById('vinylDisc');
+        const arm  = document.getElementById('vinylArm');
+        const wave = document.getElementById('vpWave');
+        const btn  = document.getElementById('vpPlayBtn');
+        const player = document.getElementById('vinyl-player');
+        bgMusic.play().then(() => {
+          playing = true;
+          btn.innerHTML = '&#9646;&#9646;';
+          disc.classList.add('spinning');
+          arm.classList.add('playing');
+          wave.classList.remove('paused');
+          player.classList.add('playing-glow');
+          // Keep as collapsed pill — music plays in background
+          player.classList.add('collapsed');
+        }).catch(() => {});
+      }
     }
 
-    // Force-attempt video play on any user gesture (needed for local file:// protocol)
-    (function() {
-      const tryPlayVideos = () => {
-        const introVid = document.getElementById('introVideo');
-        if (introVid && introVid.paused) introVid.play().catch(() => {});
-        document.removeEventListener('click', tryPlayVideos);
-        document.removeEventListener('touchstart', tryPlayVideos);
-        document.removeEventListener('keydown', tryPlayVideos);
-      };
-      document.addEventListener('click', tryPlayVideos, { once: true });
-      document.addEventListener('touchstart', tryPlayVideos, { once: true });
-      document.addEventListener('keydown', tryPlayVideos, { once: true });
-    })();
 
     /* ================================================================
        FLOATING PETALS — triggered on intro close
@@ -2974,16 +2841,18 @@
     const bgMusic = new Audio();
     let playing = false, currentTrack = 0;
     const tracks = [
-      { src: 'https://github.com/user-attachments/files/28330465/Rico.Blanco.-.Balisong.Transformed.2016.mp3', link: 'https://www.youtube.com/watch?v=SampleLink1' },
-      { src: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3', title: 'Your Universe', artist: 'Rico Blanco', link: 'https://www.youtube.com/watch?v=SampleLink2' },
-      { src: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3', title: 'All of Me', artist: 'John Legend', link: 'https://www.youtube.com/watch?v=450p7goxZqg' },
-      { src: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3', title: "Can't Help Falling in Love", artist: 'Elvis Presley', link: 'https://www.youtube.com/watch?v=vGJTaP6anOU' }
+      { src: 'https://github.com/user-attachments/files/28343774/WALKING.AWAY.mp3', link: 'https://www.youtube.com/watch?v=SampleLink1' },
+      { src: 'https://github.com/user-attachments/files/28343846/Your.Universe.Acoustic.mp3', title: 'Your Universe', artist: 'Rico Blanco', link: 'https://www.youtube.com/watch?v=SampleLink2' },
+      { src: 'https://github.com/user-attachments/files/28330465/Rico.Blanco.-.Balisong.Transformed.2016.mp3', title: 'All of Me', artist: 'John Legend', link: 'https://www.youtube.com/watch?v=450p7goxZqg' },
+      { src: 'https://github.com/user-attachments/files/28343919/LANY.-.XXL.Official.Lyric.Video.mp3', title: "Can't Help Falling in Love", artist: 'Elvis Presley', link: 'https://www.youtube.com/watch?v=vGJTaP6anOU' }
     ];
     function loadTrack(i) {
       currentTrack = i;
       if (tracks[i].src) bgMusic.src = tracks[i].src;
       document.getElementById('vpTitle').textContent = tracks[i].title;
       document.getElementById('vpArtist').textContent = tracks[i].artist;
+      const ct = document.getElementById('vpCollapsedTitle');
+      if (ct) ct.textContent = tracks[i].title;
       document.querySelectorAll('.vp-track').forEach((el,j) => el.classList.toggle('active', j === i));
     }
     function toggleVinyl() {
@@ -3021,8 +2890,23 @@
     }
     function prevSong() { selectVinylTrack((currentTrack - 1 + tracks.length) % tracks.length); }
     function nextSong() { selectVinylTrack((currentTrack + 1) % tracks.length); }
-    function expandVinyl() { document.getElementById('vinyl-player').classList.remove('collapsed'); }
-    function collapseVinyl() { document.getElementById('vinyl-player').classList.add('collapsed'); if (playing) toggleVinyl(); }
+    function expandVinyl() {
+      document.getElementById('vinyl-player').classList.remove('collapsed');
+      if (!playing) {
+        // Play must be called synchronously inside the user gesture (this click)
+        const disc = document.getElementById('vinylDisc'), arm = document.getElementById('vinylArm');
+        const wave = document.getElementById('vpWave'), btn = document.getElementById('vpPlayBtn');
+        const player = document.getElementById('vinyl-player');
+        bgMusic.play().then(() => {
+          playing = true; btn.innerHTML = '&#9646;&#9646;';
+          disc.classList.add('spinning'); arm.classList.add('playing');
+          wave.classList.remove('paused'); player.classList.add('playing-glow');
+        }).catch(() => {
+          // If still blocked, show the player expanded so user can tap play manually
+        });
+      }
+    }
+    function collapseVinyl() { document.getElementById('vinyl-player').classList.add('collapsed'); }
     function toggleVinylPlaylist() { document.getElementById('vpPlaylist').classList.toggle('open'); }
     bgMusic.addEventListener('ended', nextSong);
     loadTrack(0);
@@ -3039,33 +2923,87 @@
     /* ================================================================
        GUESTBOOK
     ================================================================ */
+    /* ================================================================
+       GUESTBOOK — synced via Anthropic Storage API
+    ================================================================ */
+    const STORAGE_KEY = 'christian-jenna-guestbook-v2';
+
     function escHtml(t) {
       return t.replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#39;');
     }
-    function getMessages() { try { return JSON.parse(localStorage.getItem('christian-jenna-guestbook')) || []; } catch { return []; } }
-    function saveMessages(m) { localStorage.setItem('christian-jenna-guestbook', JSON.stringify(m)); }
-    function renderMessages() {
-      const msgs = getMessages().slice().reverse();
+
+    async function fetchMessages() {
+      try {
+        const res = await fetch('https://api.anthropic.com/v1/messages', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            model: 'claude-sonnet-4-20250514',
+            max_tokens: 1000,
+            system: `You are a guestbook data manager. The key is "${STORAGE_KEY}". When asked to GET, return ONLY the raw JSON array stored (or [] if empty). When asked to SET with new data, acknowledge with "SAVED".`,
+            messages: [{ role: 'user', content: `GET the guestbook messages for key ${STORAGE_KEY}` }]
+          })
+        });
+        const data = await res.json();
+        const text = (data.content?.[0]?.text || '[]').trim();
+        try { return JSON.parse(text); } catch { return []; }
+      } catch { return []; }
+    }
+
+    // Use window.storage (artifact persistent storage) for cross-device sync
+    async function getMessages() {
+      try {
+        const result = await window.storage.get(STORAGE_KEY, true); // shared=true for all devices
+        return result ? JSON.parse(result.value) : [];
+      } catch {
+        // Fallback to localStorage if storage API unavailable
+        try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || []; } catch { return []; }
+      }
+    }
+
+    async function saveMessages(msgs) {
+      try {
+        await window.storage.set(STORAGE_KEY, JSON.stringify(msgs), true); // shared=true
+      } catch {
+        try { localStorage.setItem(STORAGE_KEY, JSON.stringify(msgs)); } catch {}
+      }
+    }
+
+    async function renderMessages() {
       const ml = document.getElementById('messageList');
+      ml.innerHTML = '<div class="message-card" style="grid-column:1/-1;text-align:center;opacity:0.6"><p style="font-family:\'Cinzel\',serif;font-size:9px;letter-spacing:2px;">Loading messages…</p></div>';
+      const msgs = (await getMessages()).slice().reverse();
       if (!msgs.length) {
         ml.innerHTML = '<div class="message-card"><h4>Be the first to write</h4><p>Your warm message will appear here.</p></div>';
         return;
       }
       ml.innerHTML = msgs.map(m => `<article class="message-card"><h4>${escHtml(m.name)}</h4><p>${escHtml(m.message)}</p><small>${new Date(m.createdAt).toLocaleString()}</small></article>`).join('');
     }
-    document.getElementById('guestbookForm').addEventListener('submit', e => {
+
+    document.getElementById('guestbookForm').addEventListener('submit', async e => {
       e.preventDefault();
       const name = document.getElementById('guestbookName').value.trim();
       const message = document.getElementById('guestbookMessage').value.trim();
-      if (!name || !message) { document.getElementById('guestbookStatus').textContent = 'Please fill out both fields'; return; }
-      const msgs = getMessages();
-      msgs.push({ name, message, createdAt: new Date().toISOString() });
-      saveMessages(msgs);
-      e.target.reset();
-      document.getElementById('guestbookStatus').textContent = '✦ Message posted';
-      renderMessages();
-      setTimeout(() => document.getElementById('guestbookStatus').textContent = '', 2200);
+      const statusEl = document.getElementById('guestbookStatus');
+      if (!name || !message) { statusEl.textContent = 'Please fill out both fields'; return; }
+      const submitBtn = e.target.querySelector('button[type="submit"]');
+      submitBtn.disabled = true;
+      statusEl.textContent = 'Posting…';
+      try {
+        const msgs = await getMessages();
+        msgs.push({ name, message, createdAt: new Date().toISOString() });
+        await saveMessages(msgs);
+        e.target.reset();
+        statusEl.textContent = '✦ Message posted';
+        await renderMessages();
+        setTimeout(() => statusEl.textContent = '', 2200);
+      } catch {
+        statusEl.textContent = 'Could not post — please try again';
+      } finally {
+        submitBtn.disabled = false;
+      }
     });
+
     renderMessages();
 
     /* ================================================================
@@ -3180,18 +3118,18 @@
       const notif = document.getElementById('rsvpNotification');
       if (notif) {
         notif.classList.remove('visible');
-        setTimeout(() => { notif.style.display = 'none'; }, 650);
+        setTimeout(() => { notif.style.display = 'none'; }, 600);
       }
     }
-    // Show popup after a short delay on load
+    // Show toast after a short delay on load
     setTimeout(() => {
       const notif = document.getElementById('rsvpNotification');
       if (notif) {
-        notif.style.display = 'flex';
-        requestAnimationFrame(() => notif.classList.add('visible'));
+        notif.style.display = 'block';
+        requestAnimationFrame(() => requestAnimationFrame(() => notif.classList.add('visible')));
       }
     }, 2800);
-    // Auto-dismiss after 14 seconds
+    // Auto-dismiss after 14 seconds (progress bar is 11s + 3s buffer)
     setTimeout(dismissNotif, 14000);
 
     function showRsvpToast(msg) {
