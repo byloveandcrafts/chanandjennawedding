@@ -5,6 +5,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Christian &amp; Jenna | You're Invited to Celebrate with Us!</title>
+
+  <!-- Open Graph / Social Share Preview -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Christian & Jenna | You're Invited 💍">
+  <meta property="og:description" content="Join us as we celebrate the wedding of Christian & Jenna on July 04, 2026 in Rodriguez, Rizal. Kindly RSVP and share in our joy!">
+  <meta property="og:image" content="photo1.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Christian and Jenna Wedding Invitation">
+  <meta property="og:url" content="">
+  <meta property="og:site_name" content="Christian & Jenna Wedding">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Christian & Jenna | You're Invited 💍">
+  <meta name="twitter:description" content="Join us as we celebrate the wedding of Christian & Jenna on July 04, 2026 in Rodriguez, Rizal. Kindly RSVP and share in our joy!">
+  <meta name="twitter:image" content="photo1.jpg">
+
+  <!-- General SEO -->
+  <meta name="description" content="You're invited to the wedding of Christian & Jenna on July 04, 2026 in Rodriguez, Rizal. RSVP online and join us for this beautiful celebration.">
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cormorant:ital,wght@0,300;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Cinzel:wght@400;500;600&family=Tenor+Sans&family=Great+Vibes&family=Pinyon+Script&display=swap"
     rel="stylesheet">
@@ -393,8 +413,8 @@
     .hero-overlay {
       position: absolute; inset: 0;
       background:
-        radial-gradient(ellipse at 50% 50%, transparent 40%, rgba(6,14,22,0.25) 100%),
-        linear-gradient(180deg, rgba(6,14,22,0.3) 0%, transparent 25%, transparent 70%, rgba(6,14,22,0.5) 100%);
+        radial-gradient(ellipse at 50% 50%, transparent 30%, rgba(6,14,22,0.45) 100%),
+        linear-gradient(180deg, rgba(6,14,22,0.45) 0%, rgba(6,14,22,0.2) 25%, rgba(6,14,22,0.25) 70%, rgba(6,14,22,0.65) 100%);
     }
 
     /* Enhanced champagne shimmer overlay on hero */
@@ -437,20 +457,20 @@
     .hero-content { position: relative; z-index: 10; }
     .hero-eyebrow {
       font-family: 'Tenor Sans', sans-serif; font-size: 8px; letter-spacing: 10px;
-      text-transform: uppercase; color: rgba(200,164,74,0.65); margin-bottom: 24px;
+      text-transform: uppercase; color: rgba(224,192,112,0.9); margin-bottom: 24px;
       animation: fadeUp 1s .1s ease both;
     }
     .hero-names {
       font-family: 'Cormorant', serif; font-weight: 300; font-style: italic;
-      font-size: clamp(72px, 14vw, 148px); color: rgba(255,248,235,0.95);
+      font-size: clamp(72px, 14vw, 148px); color: #fff;
       line-height: 0.95; letter-spacing: 0.01em;
-      text-shadow: 0 0 80px rgba(200,164,74,0.12), 0 4px 60px rgba(0,0,0,0.5);
+      text-shadow: 0 2px 20px rgba(0,0,0,0.8), 0 4px 60px rgba(0,0,0,0.7), 0 0 80px rgba(200,164,74,0.15);
       animation: fadeUp 1.2s .2s ease both;
     }
     .hero-names span { display: inline-block; }
     .hero-amp {
       font-family: 'Cormorant', serif; font-weight: 300; font-style: italic;
-      color: rgba(200,164,74,0.6); display: block;
+      color: rgba(224,192,112,0.9); display: block;
       font-size: clamp(44px, 8vw, 82px); letter-spacing: 0.05em;
     }
     .hero-rule {
@@ -460,12 +480,12 @@
     }
     .hero-date {
       font-family: 'Tenor Sans', sans-serif; font-size: clamp(9px,1.4vw,12px);
-      letter-spacing: 6px; text-transform: uppercase; color: rgba(255,245,210,0.6);
+      letter-spacing: 6px; text-transform: uppercase; color: rgba(255,248,220,0.95);
       animation: fadeUp 1s .45s ease both;
     }
     .hero-venue {
       font-family: 'Tenor Sans', sans-serif; font-size: 8px; letter-spacing: 3px;
-      text-transform: uppercase; color: rgba(255,245,210,0.35); margin: 10px 0 36px;
+      text-transform: uppercase; color: rgba(255,248,220,0.75); margin: 10px 0 36px;
       animation: fadeUp 1s .55s ease both;
     }
     .hero-cta {
@@ -1819,22 +1839,18 @@
       <div class="vp-playlist" id="vpPlaylist">
         <div class="vp-track active" onclick="selectVinylTrack(0)"><span class="vp-track-num">1</span>
           <div class="vp-track-info"><div class="vp-track-name">Your Universe</div><div class="vp-track-artist">Rico Blanco</div></div>
-          <a href="https://www.youtube.com/watch?v=SampleLink1" target="_blank" rel="noreferrer" onclick="event.stopPropagation()" title="Open on YouTube" style="color:var(--gold);opacity:0.5;font-size:10px;text-decoration:none;transition:opacity .2s;flex-shrink:0;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.5">▶</a>
           <span class="vp-track-dot"></span>
         </div>
         <div class="vp-track" onclick="selectVinylTrack(1)"><span class="vp-track-num">2</span>
           <div class="vp-track-info"><div class="vp-track-name">Walking Away</div><div class="vp-track-artist">Justin Bieber</div></div>
-          <a href="https://www.youtube.com/watch?v=SampleLink2" target="_blank" rel="noreferrer" onclick="event.stopPropagation()" title="Open on YouTube" style="color:var(--gold);opacity:0.5;font-size:10px;text-decoration:none;transition:opacity .2s;flex-shrink:0;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.5">▶</a>
           <span class="vp-track-dot"></span>
         </div>
         <div class="vp-track" onclick="selectVinylTrack(2)"><span class="vp-track-num">3</span>
           <div class="vp-track-info"><div class="vp-track-name">Balisong</div><div class="vp-track-artist">Rico Blanco</div></div>
-          <a href="https://www.youtube.com/watch?v=450p7goxZqg" target="_blank" rel="noreferrer" onclick="event.stopPropagation()" title="Open on YouTube" style="color:var(--gold);opacity:0.5;font-size:10px;text-decoration:none;transition:opacity .2s;flex-shrink:0;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.5">▶</a>
           <span class="vp-track-dot"></span>
         </div>
         <div class="vp-track" onclick="selectVinylTrack(3)"><span class="vp-track-num">4</span>
           <div class="vp-track-info"><div class="vp-track-name">XXL</div><div class="vp-track-artist">Lany</div></div>
-          <a href="https://www.youtube.com/watch?v=vGJTaP6anOU" target="_blank" rel="noreferrer" onclick="event.stopPropagation()" title="Open on YouTube" style="color:var(--gold);opacity:0.5;font-size:10px;text-decoration:none;transition:opacity .2s;flex-shrink:0;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.5">▶</a>
           <span class="vp-track-dot"></span>
         </div>
       </div>
@@ -2837,10 +2853,10 @@
     const bgMusic = new Audio();
     let playing = false, currentTrack = 0;
     const tracks = [
-      { src: 'https://github.com/user-attachments/files/28343846/Your.Universe.Acoustic.mp3', title: 'Your Universe', artist: 'Rico Blanco', link: 'https://www.youtube.com/watch?v=SampleLink1' },
-      { src: 'https://github.com/user-attachments/files/28343774/WALKING.AWAY.mp3', title: 'Walking Away', artist: 'Justine Bieber', link: 'https://www.youtube.com/watch?v=SampleLink2' },
-      { src: 'https://github.com/user-attachments/files/28330465/Rico.Blanco.-.Balisong.Transformed.2016.mp3', title: 'Balisong', artist: 'Rico Blanco', link: 'https://www.youtube.com/watch?v=450p7goxZqg' },
-      { src: 'https://github.com/user-attachments/files/28343919/LANY.-.XXL.Official.Lyric.Video.mp3', title: "XXL", artist: 'Lany', link: 'https://www.youtube.com/watch?v=vGJTaP6anOU' }
+      { src: 'https://github.com/user-attachments/files/28343846/Your.Universe.Acoustic.mp3', title: 'Your Universe', artist: 'Rico Blanco' },
+      { src: 'https://github.com/user-attachments/files/28343774/WALKING.AWAY.mp3', title: 'Walking Away', artist: 'Justin Bieber' },
+      { src: 'https://github.com/user-attachments/files/28330465/Rico.Blanco.-.Balisong.Transformed.2016.mp3', title: 'Balisong', artist: 'Rico Blanco' },
+      { src: 'https://github.com/user-attachments/files/28343919/LANY.-.XXL.Official.Lyric.Video.mp3', title: "XXL", artist: 'Lany' }
     ];
     function loadTrack(i) {
       currentTrack = i;
