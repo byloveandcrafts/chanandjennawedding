@@ -1182,11 +1182,11 @@
     .ent-panel {
       background: linear-gradient(160deg, #fffef8 0%, #fdfaf2 100%);
       border: 1px solid rgba(200,164,74,0.22);
-      border-radius: 18px;
-      padding: 40px 32px 44px;
+      border-radius: 14px;
+      padding: 36px 28px 40px;
       text-align: center; position: relative; display: flex; flex-direction: column; align-items: center;
       transition: box-shadow 0.4s ease, transform 0.4s ease;
-      box-shadow: 0 2px 16px rgba(200,164,74,0.07), 0 1px 4px rgba(0,0,0,0.04);
+      box-shadow: 0 2px 14px rgba(200,164,74,0.08), 0 1px 4px rgba(0,0,0,0.04);
     }
     .ent-panel::before {
       content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
@@ -1195,22 +1195,22 @@
       opacity: 0; transition: opacity .4s ease;
     }
     .ent-panel:hover::before { opacity: 1; }
-    .ent-panel:hover { box-shadow: 0 16px 48px rgba(200,164,74,0.16), 0 2px 12px rgba(0,0,0,0.06); transform: translateY(-4px); }
+    .ent-panel:hover { box-shadow: 0 12px 40px rgba(200,164,74,0.16), 0 2px 10px rgba(0,0,0,0.06); transform: translateY(-4px); }
     .ent-panel-label {
-      font-family: 'Cinzel', serif; font-size: 8px; letter-spacing: 4px; text-transform: uppercase;
-      color: rgba(139,109,56,0.7); margin-bottom: 28px; padding-bottom: 16px; width: 100%; position: relative;
+      font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 4px; text-transform: uppercase;
+      color: rgba(139,109,56,0.75); margin-bottom: 22px; padding-bottom: 14px; width: 100%; position: relative;
     }
-    .ent-panel-label::after { content: ''; position: absolute; bottom: 0; left: 25%; right: 25%; height: 0.5px; background: rgba(200,164,74,0.3); }
-    .ent-panel-name { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 22px; color: #2a1e0e; line-height: 1.5; text-align: center; letter-spacing: 0.01em; }
-    .ent-panel-name.sm { font-size: 19px; }
-    .ent-panel-and { font-family: 'Cormorant', serif; font-style: italic; font-weight: 300; font-size: 14px; color: rgba(200,164,74,0.55); margin: 4px 0; display: block; letter-spacing: 3px; }
+    .ent-panel-label::after { content: ''; position: absolute; bottom: 0; left: 20%; right: 20%; height: 0.5px; background: rgba(200,164,74,0.35); }
+    .ent-panel-name { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 24px; color: #2a1e0e; line-height: 1.5; text-align: center; letter-spacing: 0.01em; }
+    .ent-panel-name.sm { font-size: 20px; }
+    .ent-panel-and { font-family: 'Cormorant', serif; font-style: italic; font-weight: 300; font-size: 14px; color: rgba(200,164,74,0.6); margin: 4px 0; display: block; letter-spacing: 3px; }
 
     @media(max-width:760px) {
       .ent-panel-row.cols-4 { grid-template-columns: 1fr 1fr; }
-      .ent-panel { padding: 28px 20px 32px; }
-      .ent-panel-name { font-size: 20px; }
-      .ent-panel-name.sm { font-size: 17px; }
-      .ent-panel-label { font-size: 8px; letter-spacing: 3px; margin-bottom: 20px; }
+      .ent-panel { padding: 26px 18px 30px; }
+      .ent-panel-name { font-size: 21px; }
+      .ent-panel-name.sm { font-size: 18px; }
+      .ent-panel-label { font-size: 8px; letter-spacing: 3px; margin-bottom: 18px; }
     }
 
     .ent-wave-rule { display: flex; align-items: center; justify-content: center; margin: 0 auto 48px; max-width: 360px; gap: 12px; opacity: 0.45; }
@@ -1332,13 +1332,12 @@
     .attire-photos {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
+      gap: 0;
       max-width: 900px;
       margin: 0 auto 36px;
     }
     .attire-photo-box {
       aspect-ratio: 3/4;
-      border: 1px solid rgba(200,164,74,0.22);
       background: linear-gradient(135deg, #f5efe3 0%, #ede5d4 50%, #e4d8c4 100%);
       overflow: hidden;
       position: relative;
@@ -1364,10 +1363,10 @@
       text-transform: uppercase; opacity: 0.65;
     }
     @media (max-width: 700px) {
-      .attire-photos { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+      .attire-photos { grid-template-columns: repeat(2, 1fr); gap: 0; }
     }
     @media (max-width: 400px) {
-      .attire-photos { grid-template-columns: 1fr; gap: 10px; }
+      .attire-photos { grid-template-columns: 1fr; gap: 0; }
     }
 
     /* ================================================================
@@ -1655,7 +1654,7 @@
     .dc-card-text { font-size: 16px !important; }
     .dc-avoid { font-size: 17px !important; }
     .dc-avoid-label { font-size: 10px !important; }
-    .ent-panel-label { font-size: 10px !important; letter-spacing: 3.5px !important; }
+    .ent-panel-label { font-size: 10px !important; letter-spacing: 4px !important; }
     .venue-img-side span { font-size: 10px !important; }
     .venue-img-side p { font-size: 14px !important; }
     .venue-name { font-size: 22px !important; }
@@ -1839,7 +1838,7 @@
       <button class="vp-playlist-toggle" onclick="toggleVinylPlaylist()">&#9650; Playlist</button>
       <div class="vp-playlist" id="vpPlaylist">
         <div class="vp-track active" onclick="selectVinylTrack(0)"><span class="vp-track-num">1</span>
-          <div class="vp-track-info"><div class="vp-track-name">Your Universe</div><div class="vp-track-artist">Rico Blanco</div></div>
+          <div class="vp-track-info"><div class="vp-track-name">Infinitely Falling</div><div class="vp-track-artist">Fly By Midnight</div></div>
           <span class="vp-track-dot"></span>
         </div>
         <div class="vp-track" onclick="selectVinylTrack(1)"><span class="vp-track-num">2</span>
@@ -1847,7 +1846,7 @@
           <span class="vp-track-dot"></span>
         </div>
         <div class="vp-track" onclick="selectVinylTrack(2)"><span class="vp-track-num">3</span>
-          <div class="vp-track-info"><div class="vp-track-name">Balisong</div><div class="vp-track-artist">Rico Blanco</div></div>
+          <div class="vp-track-info"><div class="vp-track-name">Your Universe</div><div class="vp-track-artist">Rico Blanco</div></div>
           <span class="vp-track-dot"></span>
         </div>
         <div class="vp-track" onclick="selectVinylTrack(3)"><span class="vp-track-num">4</span>
@@ -2384,7 +2383,7 @@
   <section id="attire" style="background:var(--foam);">
     <p class="s-eye reveal">Dress The Part</p>
     <h2 class="s-title reveal">Attire Guide</h2>
-    <p class="s-sub reveal">Formal &mdash; champagne, sand, blush pink, and gray in elegant harmony.</p>
+    <p class="s-sub reveal">Semi-Formal &mdash; champagne, sand, blush pink, and gray in elegant harmony.</p>
 
     <div class="dc-swatches reveal">
       <div class="dc-swatch">
@@ -2409,7 +2408,7 @@
       <div class="dc-card">
         <span class="dc-card-num">01</span>
         <div class="dc-card-title">General Guests</div>
-        <div class="dc-card-text">Formal attire within our motif palette. Dress cohesively so our celebration photographs beautifully.</div>
+        <div class="dc-card-text">Semi-Formal attire within our motif palette. Dress cohesively so our celebration photographs beautifully.</div>
       </div>
       <div class="dc-card">
         <span class="dc-card-num">02</span>
@@ -2495,7 +2494,7 @@
       </div>
       <div class="faq-item reveal">
         <button class="faq-q" onclick="toggleFaq(this)">Is there a dress code? <span class="faq-chev">&#9660;</span></button>
-        <div class="faq-a">Yes! Our dress code is <strong>formal attire</strong> in our motif palette: <em>champagne, sand, blush pink, and gray</em>. Ladies are encouraged to wear elegant gowns or formal dresses in these tones. Gentlemen are encouraged to wear barong Tagalog or a formal suit. Please avoid wearing white, off-white, or black to the ceremony as a courtesy to the bride. Check our Attire Guide section for more inspiration.</div>
+        <div class="faq-a">Yes! Our dress code is <strong>semi-formal attire</strong> in our motif palette: <em>champagne, sand, blush pink, and gray</em>. Ladies are encouraged to wear elegant gowns or semi-formal dresses in these tones. Gentlemen are encouraged to wear barong Tagalog or a formal suit. Please avoid wearing white, off-white, or black to the ceremony as a courtesy to the bride. Check our Attire Guide section for more inspiration.</div>
       </div>
       <div class="faq-item reveal">
         <button class="faq-q" onclick="toggleFaq(this)">Is this an unplugged ceremony? <span class="faq-chev">&#9660;</span></button>
@@ -2598,11 +2597,11 @@
           <path d="M16 3l2 2 4-4"/>
         </svg>
       </div>
-      <h3 class="album-share-title">Upload Your Photos</h3>
+      <h3 class="album-share-title">A Little Reminder ✦</h3>
       <p class="album-share-text">
-        Caught a candid smile? Snapped a magical moment?<br>
-        We'd love to see the day through your eyes.<br><br>
-        Upload your photos to our shared album — every picture tells a part of our story.
+        Don't forget to upload your photos to our shared guest album!<br><br>
+        Every candid smile and magical moment you captured is a treasure to us.<br>
+        Scan the QR code on the reception day — we'd love to see the day through your eyes.
       </p>
       <div class="album-share-steps">
         <div class="album-step">
@@ -2611,21 +2610,14 @@
         </div>
         <div class="album-step">
           <span class="album-step-num">02</span>
-          <span class="album-step-desc">Upload photos from your phone or camera</span>
+          <span class="album-step-desc">Select and upload your favorite photos</span>
         </div>
         <div class="album-step">
           <span class="album-step-num">03</span>
-          <span class="album-step-desc">Share your favorite moments with us!</span>
+          <span class="album-step-desc">Help us relive every beautiful moment!</span>
         </div>
       </div>
-      <div class="album-qr-wrap">
-        <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://photos.google.com/share/ChristianAndJenna2026&color=1c1008&bgcolor=ffffff" alt="Album QR" class="album-qr-img">
-       
-      </div>
-      <a href="#" class="album-upload-btn" id="albumUploadBtn" target="_blank" rel="noreferrer">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-        Share Your Photos
-      </a>
+
       
     </div>
   </section>
@@ -2779,26 +2771,27 @@
        FLOATING PETALS — triggered on intro close
     ================================================================ */
     function spawnPetals() {
-      const petalChars = ['✿', '❀', '✾', '❁', '✽'];
-      for (let i = 0; i < 18; i++) {
+      const sparkleChars = ['✦', '✧', '⋆', '✺', '✴', '✵', '✶', '✷'];
+      for (let i = 0; i < 22; i++) {
         setTimeout(() => {
           const petal = document.createElement('div');
           petal.className = 'petal';
-          const char = petalChars[Math.floor(Math.random() * petalChars.length)];
-          const x = 20 + Math.random() * 60;
-          const duration = 3 + Math.random() * 4;
-          const sway = (Math.random() - 0.5) * 200;
-          const size = 12 + Math.random() * 16;
+          const char = sparkleChars[Math.floor(Math.random() * sparkleChars.length)];
+          const x = 10 + Math.random() * 80;
+          const duration = 2.5 + Math.random() * 4;
+          const sway = (Math.random() - 0.5) * 180;
+          const size = 8 + Math.random() * 18;
           petal.innerHTML = char;
           petal.style.cssText = `
             left:${x}%; top:-30px; font-size:${size}px;
-            color:rgba(200,164,74,${0.4 + Math.random() * 0.5});
+            color:rgba(200,164,74,${0.5 + Math.random() * 0.5});
             animation-duration:${duration}s;
             --sway:${sway}px;
+            text-shadow:0 0 8px rgba(200,164,74,0.6);
           `;
           document.body.appendChild(petal);
           setTimeout(() => petal.remove(), duration * 1000 + 200);
-        }, i * 100);
+        }, i * 90);
       }
     }
 
@@ -2854,9 +2847,9 @@
     const bgMusic = new Audio();
     let playing = false, currentTrack = 0;
     const tracks = [
-      { src: 'https://github.com/user-attachments/files/28343846/Your.Universe.Acoustic.mp3', title: 'Your Universe', artist: 'Rico Blanco' },
+      { src: 'https://github.com/user-attachments/files/28371435/Fly.By.Midnight.-.Infinitely.Falling.SPOTISAVER.mp3', title: 'Infinitely Falling', artist: 'Fly By Midnight' },
       { src: 'https://github.com/user-attachments/files/28343774/WALKING.AWAY.mp3', title: 'Walking Away', artist: 'Justin Bieber' },
-      { src: 'https://github.com/user-attachments/files/28330465/Rico.Blanco.-.Balisong.Transformed.2016.mp3', title: 'Balisong', artist: 'Rico Blanco' },
+      { src: 'https://github.com/user-attachments/files/28343846/Your.Universe.Acoustic.m', title: 'Your Universe', artist: 'Rico Blanco' },
       { src: 'https://github.com/user-attachments/files/28343919/LANY.-.XXL.Official.Lyric.Video.mp3', title: "XXL", artist: 'Lany' }
     ];
     function loadTrack(i) {
